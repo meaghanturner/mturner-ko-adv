@@ -23,14 +23,14 @@
       <p>Phone: <input type="tel" data-bind="" /></p>
       <p>Address: <input data-bind="" /></p>
       <p>About: <input data-bind="" /></p>
-      <p>Registered: <input type="type="date"" data-bind="" /></p>
+      <p>Registered: <input type="date" data-bind="" /></p>
       <p>Greeting: <input data-bind="" /></p>
       <p>Department: <input data-bind="" /></p>
       <p> Favorite Animal:
         <select data-bind="options: availableAnimals"></select>
       </p>
       <p>
-        <button data-bind="">Add</button>
+        <button data-bind="click: addEmployee">Add</button>
       </p>
       <h2>Employee List</h2>
       <ul data-bind="foreach: inventory">
