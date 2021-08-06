@@ -38,19 +38,16 @@
           <p><strong>Full Name: </strong><span data-bind="text: $data.name.last + ', ' + $data.name.first"></span></p>
           <p><strong>Date of Birth: </strong><span data-bind="text: $data.birthday"></span></p>
           <p><strong>Status:</strong>
-          <!-- ko if: $data.isActive == true -->
-          <span>Online</span>
-          <!-- /ko -->
-          <!-- ko if: $data.isActive === undefined || $data.isActive == false -->
-          <span>Offline</span>
-          <!-- /ko -->
+            <!-- ko if: $data.isActive == true -->
+            <span>Online</span>
+            <!-- /ko -->
+            <!-- ko if: $data.isActive === undefined || $data.isActive == false -->
+            <span>Offline</span>
+            <!-- /ko -->
           </p>
           <p><strong>Email: </strong> <span data-bind="text: $data.email"></span></p>
           <p><strong>Department: </strong><span data-bind="text: $data.department"></span></p>
           <p><strong>Favorite Animal: </strong><span data-bind="text: $data.favoriteAnimal"></span></p>
-          <span>
-            <button data-bind="">&times;</button>
-          </span>
         </li>
         <br>
       </ul>
