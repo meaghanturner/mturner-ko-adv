@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mturner KO Training</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/vendor/knockout-3.5.6.min.js"></script>
+  <body>
+    <main class="main-content">
+      <h1>Employee Database</h1>
+
+      <h2>Add new employee</h2>
+      <p>Status (Online): <input type="checkbox" data-bind="checked: online" /></p>
+      <p>Photo (url): <input type="url" data-bind="value: photo" /></p>
+      <p>First name: <input data-bind="value: firstName" /></p>
+      <p>Last name: <input data-bind="value: lastName" /></p>
+      <p>DOB: <input type="date" data-bind="value: dob" /></p>
+      <p>Email: <input type="email" data-bind="value: email" /></p>
+      <p>Phone: <input type="tel" data-bind="value: phone" /></p>
+      <p>Address: <input data-bind="value: address" /></p>
+      <p>About: <input data-bind="value: about" /></p>
+      <p>Greeting: <input data-bind="value: greeting" /></p>
+      <p>Department: <input data-bind="value: department" /></p>
+      <p>Favorite Animal:
+        <select data-bind="options: availableAnimals, selectedOptions: chosenAnimals"></select>
+      </p>
+      <p>
+        <button data-bind="click: addEmployee">Add</button>
+      </p>
+      <h2>Employee List</h2>
+      <ul data-bind="foreach: employees">
+        <li>
+          <img data-bind="attr: {src: $data.picture}">
+          <p><strong>Full Name: </strong><span data-bind="text: $data.name.last + ', ' + $data.name.first"></span></p>
+          <p><strong>Date of Birth: </strong><span data-bind="text: $data.birthday"></span></p>
+          <p><strong>Status:</strong>
+            <!-- ko if: $data.isActive == true -->
+            <span>Online</span>
+            <!-- /ko -->
+            <!-- ko if: $data.isActive === undefined || $data.isActive == false -->
+            <span>Offline</span>
+            <!-- /ko -->
+          </p>
+          <p><strong>Email: </strong> <span data-bind="text: $data.email"></span></p>
+          <p><strong>Department: </strong><span data-bind="text: $data.department"></span></p>
+          <p><strong>Favorite Animal: </strong><span data-bind="text: $data.favoriteAnimal"></span></p>
+        </li>
+        <br>
+      </ul>
+    </main>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
